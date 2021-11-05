@@ -3,3 +3,42 @@
     // 2.1 prima lo facciamo per uno
     // 2.2 poi creiamo un ciclo per riprodurre ogni oggetto
 // 3. abilitiamo il tasto dei "mi piace" per aumentrne il conteggio
+
+// array
+const post = [
+    {
+        "author"     : "",
+        "profileImg" : "",
+        "date"       : "",
+        "text"       : "",
+        "img"        : "",
+        "likes"      : ""
+    },
+
+    {
+        "author"     : "",
+        "profileImg" : "",
+        "date"       : "",
+        "text"       : "",
+        "img"        : "",
+        "likes"      : ""
+    },
+
+    {
+        "author"     : "",
+        "profileImg" : "",
+        "date"       : "",
+        "text"       : "",
+        "img"        : "",
+        "likes"      : ""
+    },
+
+    {
+        "author"     : "",
+        "profileImg" : "",
+        "date"       : "",
+        "text"       : "",
+        "img"        : "",
+        "likes"      : ""
+    }
+]
