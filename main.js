@@ -95,6 +95,7 @@ postFoot.classList.add("post__footer");
 
 let postLike = document.createElement("div");
 postLike.classList.add("likes");
+postLike.classList.add("js-likes");
 
 let postCta = document.createElement("div");
 postCta.classList.add("likes__cta");
@@ -107,6 +108,7 @@ postCta.innerHTML =`
 
 // let postButton = document.createElement("a");
 // postButton.classList.add("like-button");
+// postButton.classList.add("js-like-button");
 
 let postCounter = document.createElement("div");
 postCounter.classList.add("likes__counter");
