@@ -7,12 +7,12 @@
 // array
 const post = [
     {
-        "author"     : "",
-        "profileImg" : "",
-        "date"       : "",
-        "text"       : "",
-        "img"        : "",
-        "likes"      : ""
+        "author"     : "Phil Mangione",
+        "profileImg" : "https://unsplash.it/300/300?image=15",
+        "date"       : "4 mesi fa",
+        "text"       : "Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.",
+        "img"        : "https://unsplash.it/600/300?image=171",
+        "likesNumb"  : "80"
     },
 
     {
@@ -21,7 +21,7 @@ const post = [
         "date"       : "",
         "text"       : "",
         "img"        : "",
-        "likes"      : ""
+        "likesNumb"  : ""
     },
 
     {
@@ -30,7 +30,7 @@ const post = [
         "date"       : "",
         "text"       : "",
         "img"        : "",
-        "likes"      : ""
+        "likesNumb"  : ""
     },
 
     {
@@ -39,6 +39,6 @@ const post = [
         "date"       : "",
         "text"       : "",
         "img"        : "",
-        "likes"      : ""
+        "likesNumb"  : ""
     }
 ]
