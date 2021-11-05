@@ -46,100 +46,114 @@ const post = [
     }
 ]
 // ciclo
-for (i = 0; i < post.length; i++) {
-    // html
-    let postDiv = document.createElement("div");
-    postDiv.classList.add("post");
-
-    let postHead = document.createElement("div");
-    postHead.classList.add("post__header");
-
-    let postMt = document.createElement("div");
-    postMt.classList.add("post-meta");
-
-    let postIcon = document.createElement("div");
-    postIcon.classList.add("post-meta__icon");
-    postIcon.innerHTML += `
-    <img 
-        class="profile-pic" 
-        src="${post[i].profileImg} " 
-        alt="Phil Mangione"
-    >`;
-
-    let postData = document.createElement("div");
-    postData.classList.add("post-meta__data");
-    postData.innerHTML += `
-    <div class="post-meta__author">
-        ${post[i].author}
-    </div>`;
-    postData.innerHTML += `
-    <div class="post-meta__time">
-        ${post[i].date}
-    </div>`;
-
-    let postText = document.createElement("div");
-    postText.classList.add("post__text");
-    postText.innerText += `
-        ${post[i].text}
-    `;
-
-    let postImg = document.createElement("div");
-    postImg.classList.add("post__image");
-    postImg.innerHTML += `
-    <img 
-        src="${post[i].img}" 
-        alt=""
-    >`;
-
-    let postFoot = document.createElement("div");
-    postFoot.classList.add("post__footer");
-
-    let postLike = document.createElement("div");
-    postLike.classList.add("likes");
-    postLike.classList.add("js-likes");
-
-    let postCta = document.createElement("div");
-    postCta.classList.add("likes__cta");
-    postCta.innerHTML +=`
-    <a class="like-button  js-like-button" href="#" data-postid="1">
-        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-        <span class="like-button__label">Mi Piace</span>
-    </a>
-    `;
-
-    let postCounter = document.createElement("div");
-    postCounter.classList.add("likes__counter");
-    postImg.innerHTML += `
-    Piace a 
-        <b id="like-counter-1" class="js-likes-counter">
-            ${post[i].likesNumb}
-        </b> 
-    persone`;
-    
-    postDiv.appendChild(postHead);
-    postDiv.appendChild(postText);
-
-    postHead.appendChild(postMt);
-
-    postMt.appendChild(postIcon);
-    postMt.appendChild(postData);
-
-    postDiv.appendChild(postImg);
-    postDiv.appendChild(postFoot);
-
-    postFoot.appendChild(postCounter);
-    postFoot.appendChild(postLike);
-
-    postLike.appendChild(postCta);
-
-    postCont.appendChild(postDiv);
-}
+stampa();
 
 // button
-const likeButton = document.querySelector(".js-like-button");
+let likeButton = document.querySelectorAll(".js-like-button");
+let likeNumber = document.querySelectorAll(".js-likes-counter");
 
-likeButton.addEventListener(`click`,
+
+for (let i = 0; i < likeButton.length; i++) {
+
+    likeButton[i].addEventListener(`click`,
     function () {
+        // console.log("ciao");
+        const index = this.getAttribute(`data-postid`);
+        console.log(index);
+        post[index].likesNumb = parseInt(post[index].likesNumb) + 1;
+        console.log(post[index]);
+    });
+}
+
+// funzioni
+function stampa() {
+    for (i = 0; i < post.length; i++) {
+        // html
+        let postDiv = document.createElement("div");
+        postDiv.classList.add("post");
+    
+        let postHead = document.createElement("div");
+        postHead.classList.add("post__header");
+    
+        let postMt = document.createElement("div");
+        postMt.classList.add("post-meta");
+    
+        let postIcon = document.createElement("div");
+        postIcon.classList.add("post-meta__icon");
+        postIcon.innerHTML += `
+        <img 
+            class="profile-pic" 
+            src="${post[i].profileImg} " 
+            alt="Phil Mangione"
+        >`;
+    
+        let postData = document.createElement("div");
+        postData.classList.add("post-meta__data");
+        postData.innerHTML += `
+        <div class="post-meta__author">
+            ${post[i].author}
+        </div>`;
+        postData.innerHTML += `
+        <div class="post-meta__time">
+            ${post[i].date}
+        </div>`;
+    
+        let postText = document.createElement("div");
+        postText.classList.add("post__text");
+        postText.innerText += `
+            ${post[i].text}
+        `;
+    
+        let postImg = document.createElement("div");
+        postImg.classList.add("post__image");
+        postImg.innerHTML += `
+        <img 
+            src="${post[i].img}" 
+            alt=""
+        >`;
+    
+        let postFoot = document.createElement("div");
+        postFoot.classList.add("post__footer");
+    
+        let postLike = document.createElement("div");
+        postLike.classList.add("likes");
+        postLike.classList.add("js-likes");
+    
+        let postCta = document.createElement("div");
+        postCta.classList.add("likes__cta");
+        postCta.innerHTML +=`
+        <a class="like-button  js-like-button" href="#" data-postid="${i}">
+            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+            <span class="like-button__label">Mi Piace</span>
+        </a>
+        `;
+    
+        let postCounter = document.createElement("div");
+        postCounter.classList.add("likes__counter");
+        postImg.innerHTML += `
+        Piace a 
+            <b id="like-counter-1" class="js-likes-counter">
+                ${post[i].likesNumb}
+            </b> 
+        persone`;
         
+        postDiv.appendChild(postHead);
+        postDiv.appendChild(postText);
+    
+        postHead.appendChild(postMt);
+    
+        postMt.appendChild(postIcon);
+        postMt.appendChild(postData);
+    
+        postDiv.appendChild(postImg);
+        postDiv.appendChild(postFoot);
+    
+        postFoot.appendChild(postCounter);
+        postFoot.appendChild(postLike);
+    
+        postLike.appendChild(postCta);
+    
+        postCont.appendChild(postDiv);
     }
-)
+    
+}
