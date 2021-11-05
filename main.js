@@ -115,7 +115,7 @@ for (i = 0; i < post.length; i++) {
             ${post[i].likesNumb}
         </b> 
     persone`;
-
+    
     postDiv.appendChild(postHead);
     postDiv.appendChild(postText);
 
@@ -135,3 +135,11 @@ for (i = 0; i < post.length; i++) {
     postCont.appendChild(postDiv);
 }
 
+// button
+const likeButton = document.querySelector(".js-like-button");
+
+likeButton.addEventListener(`click`,
+    function () {
+        
+    }
+)
